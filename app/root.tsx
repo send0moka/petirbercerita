@@ -7,6 +7,7 @@ import {
 } from "@remix-run/react"
 import type { LinksFunction } from "@remix-run/node"
 import { MainHeader } from "~/components/MainHeader"
+import { MainFooter } from "~/components/MainFooter"
 
 import "./tailwind.css"
 
@@ -35,6 +36,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body className="min-h-screen bg-background font-sans antialiased">
         <MainHeader />
         {children}
+        <MainFooter />
         <ScrollRestoration />
         <Scripts />
       </body>
