@@ -44,33 +44,33 @@ export default function HeroCountdown() {
       return (
         <div className="flex space-x-4 text-center">
           <div className="flex flex-col items-center">
-            <span className="text-6xl font-bold">
+            <span className="text-xl md:text-6xl font-bold">
               {padZero(timeLeft.months)}
             </span>
             <span className="text-sm">Bulan</span>
           </div>
-          <span className="text-6xl font-bold opacity-50">:</span>
+          <span className="text-xl md:text-6xl font-bold opacity-50">:</span>
           <div className="flex flex-col items-center">
-            <span className="text-6xl font-bold">{padZero(timeLeft.days)}</span>
+            <span className="text-xl md:text-6xl font-bold">{padZero(timeLeft.days)}</span>
             <span className="text-sm">Hari</span>
           </div>
-          <span className="text-6xl font-bold opacity-50">:</span>
+          <span className="text-xl md:text-6xl font-bold opacity-50">:</span>
           <div className="flex flex-col items-center">
-            <span className="text-6xl font-bold">
+            <span className="text-xl md:text-6xl font-bold">
               {padZero(timeLeft.hours)}
             </span>
             <span className="text-sm">Jam</span>
           </div>
-          <span className="text-6xl font-bold opacity-50">:</span>
+          <span className="text-xl md:text-6xl font-bold opacity-50">:</span>
           <div className="flex flex-col items-center">
-            <span className="text-6xl font-bold">
+            <span className="text-xl md:text-6xl font-bold">
               {padZero(timeLeft.minutes)}
             </span>
             <span className="text-sm">Menit</span>
           </div>
-          <span className="text-6xl font-bold opacity-50">:</span>
+          <span className="text-xl md:text-6xl font-bold opacity-50">:</span>
           <div className="flex flex-col items-center">
-            <span className="text-6xl font-bold">
+            <span className="text-xl md:text-6xl font-bold">
               {padZero(timeLeft.seconds)}
             </span>
             <span className="text-sm">Detik</span>
@@ -81,19 +81,19 @@ export default function HeroCountdown() {
       return (
         <div className="flex space-x-4 text-center">
           <div className="flex flex-col items-center">
-            <span className="text-6xl font-bold">{padZero(days)}</span>
+            <span className="text-xl md:text-6xl font-bold">{padZero(days)}</span>
             <span className="text-sm">Hari</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-6xl font-bold">{padZero(hours)}</span>
+            <span className="text-xl md:text-6xl font-bold">{padZero(hours)}</span>
             <span className="text-sm">Jam</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-6xl font-bold">{padZero(minutes)}</span>
+            <span className="text-xl md:text-6xl font-bold">{padZero(minutes)}</span>
             <span className="text-sm">Menit</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-6xl font-bold">{padZero(seconds)}</span>
+            <span className="text-xl md:text-6xl font-bold">{padZero(seconds)}</span>
             <span className="text-sm">Detik</span>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function HeroCountdown() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-center">
-      <h1 className="text-4xl font-bold mb-8">KKN UNSOED DESA PETIR 2025</h1>
+      <h1 className="text-xl md:text-4xl font-bold mb-8">KKN UNSOED DESA PETIR 2025</h1>
       {formatTime()}
       <p className="text-sm text-muted-foreground mt-6">
         Tanggal berakhir: 8 Januari 2025 00:00 WIB
