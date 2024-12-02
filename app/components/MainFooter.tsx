@@ -45,7 +45,7 @@ export function MainFooter() {
 
           {/* Contact Section */}
           <div>
-            <h4 className="font-semibold mb-4 text-white">Kontak Desa</h4>
+            <h4 className="font-semibold mb-4 text-white">Kontak Kami</h4>
             <ul className="space-y-3 mb-4">
               {CONTACT_INFO.map((contact) => (
                 <li key={contact.label} className="flex items-center space-x-2">
