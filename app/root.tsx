@@ -4,8 +4,6 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useRouteError,
-  isRouteErrorResponse,
 } from "@remix-run/react"
 import type { LinksFunction } from "@remix-run/node"
 import { MainHeader } from "~/components/MainHeader"
@@ -26,13 +24,7 @@ export const links: LinksFunction = () => [
   },
 ]
 
-export function Layout({
-  children,
-  showHeader = true,
-}: {
-  children: React.ReactNode
-  showHeader?: boolean
-}) {
+export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -42,65 +34,13 @@ export function Layout({
         <Links />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
-        {showHeader && <MainHeader />}
+        <MainHeader />
         {children}
         <MainFooter />
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
-  )
-}
-
-export function ErrorBoundary() {
-  const error = useRouteError()
-
-  if (isRouteErrorResponse(error)) {
-    return (
-      <Layout>
-        <div className="container mx-auto px-4 py-16">
-          {error.status === 404 ? (
-            <div className="text-center">
-              <h1 className="text-8xl font-bold text-primary/70 mb-4">404</h1>
-              <h2 className="text-3xl font-semibold text-foreground mb-4">
-                Halaman Tidak Ditemukan
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                Maaf, halaman yang Anda cari tidak tersedia atau telah
-                dipindahkan.
-              </p>
-
-              <div className="flex justify-center gap-4">
-                <a
-                  href="/"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-                >
-                  Kembali ke Beranda
-                </a>
-              </div>
-            </div>
-          ) : (
-            <div className="text-center">
-              <h1 className="text-6xl font-bold text-primary/70 mb-4">
-                {error.status}
-              </h1>
-              <p className="text-muted-foreground">{error.statusText}</p>
-            </div>
-          )}
-        </div>
-      </Layout>
-    )
-  }
-
-  return (
-    <Layout>
-      <div className="container mx-auto px-4 py-60 md:py-36 text-center">
-        <h1 className="text-6xl font-bold text-primary/70 mb-4">Kesalahan</h1>
-        <p className="text-muted-foreground">
-          Terjadi kesalahan yang tidak terduga.
-        </p>
-      </div>
-    </Layout>
   )
 }
 
