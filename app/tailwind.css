@@ -4,13 +4,13 @@
 
 html,
 body {
-  @apply bg-gray-950 text-white;
+  @apply bg-[#030712] text-white;
   color-scheme: dark;
 }
 
 @layer base {
   :root {
-    --background: 0 0% 3.9%;
+    --background: #030712;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -36,7 +36,7 @@ body {
     --chart-5: 340 75% 55%;
   }
   .dark {
-    --background: 0 0% 3.9%;
+    --background: #030712;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;

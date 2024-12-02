@@ -3,7 +3,7 @@ import { FOOTER_NAV_ITEMS, CONTACT_INFO } from "~/config/navigation"
 
 export function MainFooter() {
   return (
-    <footer className="bg-gray-950 text-white border-t border-gray-800">
+    <footer>
       <div className="container mx-auto px-4 md:px-0 flex gap-10 lg:gap-40 flex-col lg:flex-row py-12">
         {/* Logo Section */}
         <div>
@@ -64,7 +64,7 @@ export function MainFooter() {
       </div>
       
       {/* Copyright Notice */}
-      <div className="border-t border-gray-800 py-4">
+      <div className="py-4">
         <p className="text-sm text-muted-foreground text-center">
           &copy; {new Date().getFullYear()} Petir Bercerita. All rights reserved.
         </p>

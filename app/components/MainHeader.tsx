@@ -45,7 +45,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}
@@ -246,7 +246,7 @@ const MobileNavigation = () => {
 // Main Header Component
 export function MainHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-gray-950/95 backdrop-blur">
+    <header className="sticky top-0 z-50 w-full backdrop-blur">
       <div className="mx-auto flex h-14 max-w-screen-2xl items-center px-4 relative">
         {/* Left: Logo */}
         <div className="absolute left-4 flex-shrink-0">
