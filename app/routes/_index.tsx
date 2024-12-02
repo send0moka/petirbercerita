@@ -12,20 +12,6 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className="relative flex h-screen items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        onError={(e) => console.error("Video error:", e)}
-        onLoadedMetadata={() => console.log("Video metadata loaded")}
-      >
-        <source src="https://bem-unsoed.com/bgvid.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
       {/* Vignette Overlay - Gradasi yang lebih kuat */}
       <div
         className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b 
