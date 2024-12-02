@@ -117,7 +117,7 @@ const DesktopNavigation = () => {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link to="/artikel">Artikel</Link>
+              <Link to="/">Artikel</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -125,7 +125,7 @@ const DesktopNavigation = () => {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link to="/dokumentasi">Dokumentasi</Link>
+              <Link to="/">Dokumentasi</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
