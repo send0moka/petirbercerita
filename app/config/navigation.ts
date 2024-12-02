@@ -39,8 +39,8 @@ export const KKN_MENU_ITEMS: MenuLink[] = [
 ]
 
 export const HEADER_ADDITIONAL_MENU_ITEMS: MenuLink[] = [
-  { href: "/artikel", title: "Artikel" },
-  { href: "/dokumentasi", title: "Dokumentasi" },
+  { href: "/", title: "Artikel" },
+  { href: "/", title: "Dokumentasi" },
 ]
 
 export const FOOTER_NAV_ITEMS = [
