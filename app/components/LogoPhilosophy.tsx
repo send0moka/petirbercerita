@@ -1,5 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
+import { Button } from "./ui/button"
 
 interface LogoElementProps {
   imageSrc: string
@@ -7,34 +8,27 @@ interface LogoElementProps {
   description: string
 }
 
-const LogoElement: React.FC<LogoElementProps> = ({ 
-  imageSrc, 
-  header, 
-  description 
+const LogoElement: React.FC<LogoElementProps> = ({
+  imageSrc,
+  header,
+  description,
 }) => (
-  <motion.div 
+  <motion.div
     className="flex items-center space-x-4 bg-gray-800/50 border rounded-xl p-4"
-    whileHover={{ 
+    whileHover={{
       scale: 1.03,
-      transition: { duration: 0.2 }
+      transition: { duration: 0.2 },
     }}
     initial={{ opacity: 0, y: 50 }}
-    whileInView={{ 
-      opacity: 1, 
+    whileInView={{
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
+      transition: { duration: 0.6 },
     }}
     viewport={{ once: true }}
   >
-    <motion.div 
-      className="flex-shrink-0"
-      whileHover={{ rotate: 5 }}
-    >
-      <img 
-        src={imageSrc} 
-        alt={header} 
-        className="w-16 h-16 object-contain"
-      />
+    <motion.div className="flex-shrink-0" whileHover={{ rotate: 5 }}>
+      <img src={imageSrc} alt={header} className="w-16 h-16 object-contain" />
     </motion.div>
     <div>
       <h3 className="text-lg font-semibold text-white">{header}</h3>
@@ -75,25 +69,25 @@ export default function LogoPhilosophy() {
 
   return (
     <div className="container mx-auto px-4 py-16 flex flex-col items-center">
-      <motion.h2 
+      <motion.h2
         initial={{ opacity: 0, y: -50 }}
-        whileInView={{ 
-          opacity: 1, 
+        whileInView={{
+          opacity: 1,
           y: 0,
-          transition: { duration: 0.6 }
+          transition: { duration: 0.6 },
         }}
         viewport={{ once: true }}
-        className="text-3xl font-bold text-white mb-8"
+        className="text-xl md:text-5xl font-bold text-white mb-8"
       >
         Logo Release
       </motion.h2>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ 
-          opacity: 1, 
+        whileInView={{
+          opacity: 1,
           scale: 1,
-          transition: { duration: 0.6 }
+          transition: { duration: 0.6 },
         }}
         viewport={{ once: true }}
         className="mb-12"
@@ -105,19 +99,43 @@ export default function LogoPhilosophy() {
         />
       </motion.div>
 
-      <motion.div 
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6 },
+        }}
+        viewport={{ once: true }}
+        className="mb-12 text-center"
+      >
+        <a
+          href="https://drive.google.com/drive/folders/12J8e9Bb0ydRigAtr2MKy1SFrIjV6SF4L?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button
+            variant="default"
+            className="mx-auto rounded-full shadow-white shadow-md px-8 py-3"
+          >
+            Download Logo Kit
+          </Button>
+        </a>
+      </motion.div>
+
+      <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={{
           hidden: { opacity: 0 },
-          visible: { 
+          visible: {
             opacity: 1,
-            transition: { 
+            transition: {
               delayChildren: 0.2,
-              staggerChildren: 0.1 
-            }
-          }
+              staggerChildren: 0.1,
+            },
+          },
         }}
         className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl"
       >
