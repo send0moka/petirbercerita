@@ -106,7 +106,7 @@ export default function HeroCountdown() {
       <h1 className="text-xl md:text-4xl font-bold mb-8">KKN UNSOED DESA PETIR 2025</h1>
       {formatTime()}
       <p className="text-sm text-muted-foreground mt-6">
-        Tanggal berakhir: 8 Januari 2025 00:00 WIB
+        Tanggal dimulai 8 Januari 2025
       </p>
     </div>
   )
