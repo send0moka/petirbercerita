@@ -116,7 +116,7 @@ export default function LogoPhilosophy() {
         >
           <Button
             variant="default"
-            className="mx-auto rounded-full shadow-white shadow-md px-8 py-3"
+            className="mx-auto rounded-full shadow-white shadow-md px-8 py-3 transition-transform transform-gpu hover:scale-105"
           >
             Download Logo Kit
           </Button>
