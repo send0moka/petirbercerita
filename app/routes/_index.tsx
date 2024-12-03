@@ -2,6 +2,7 @@
 import type { MetaFunction } from "@remix-run/node"
 import HeroCountdown from "~/components/HeroCountdown"
 import LogoPhilosophy from "~/components/LogoPhilosophy"
+import Map from "~/components/Map"
 
 export const meta: MetaFunction = () => {
   return [
@@ -42,6 +43,11 @@ export default function Index() {
       {/* Logo Philosophy Section */}
       <section className="bg-background">
         <LogoPhilosophy />
+      </section>
+
+      {/* Map Section */}
+      <section className="bg-background">
+        <Map />
       </section>
     </div>
   )

@@ -10,6 +10,7 @@ import { MainHeader } from "~/components/MainHeader"
 import { MainFooter } from "~/components/MainFooter"
 
 import "./tailwind.css"
+import "leaflet/dist/leaflet.css"
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
