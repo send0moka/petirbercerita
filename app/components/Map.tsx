@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
 
 export default function Map() {
   const [MapComponent, setMapComponent] = useState<React.ComponentType | null>(null)
@@ -188,7 +189,19 @@ export default function Map() {
     import("react-leaflet").then(
       ({ MapContainer, TileLayer, Marker, Tooltip, Polygon }) => {
         const DynamicMap = () => (
-          <div className="container mx-auto px-4 py-16 flex flex-col items-center w-full h-[500px]">
+          <div className="container mx-auto px-4 py-16 flex flex-col items-center w-full h-[40rem]">
+            <motion.h2
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6 },
+              }}
+              viewport={{ once: true }}
+              className="text-xl md:text-5xl font-bold text-white mb-8"
+            >
+              Lokasi KKN
+            </motion.h2>
             <MapContainer
               className="w-full h-full"
               center={[-7.4895, 109.5904]}
