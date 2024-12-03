@@ -19,16 +19,29 @@ const LogoElement: React.FC<LogoElementProps> = ({
       scale: 1.03,
       transition: { duration: 0.2 },
     }}
-    initial={{ opacity: 0, y: 50 }}
+    initial={{ opacity: 0, y: 20 }}
     whileInView={{
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { 
+        duration: 0.3,
+        ease: "easeOut"
+      },
     }}
-    viewport={{ once: true }}
+    viewport={{ 
+      once: true, 
+      amount: 0.5
+    }}
   >
-    <motion.div className="flex-shrink-0" whileHover={{ rotate: 5 }}>
-      <img src={imageSrc} alt={header} className="w-16 h-16 object-contain" />
+    <motion.div 
+      className="flex-shrink-0" 
+      whileHover={{ rotate: 5 }}
+    >
+      <img 
+        src={imageSrc} 
+        alt={header} 
+        className="w-16 h-16 object-contain" 
+      />
     </motion.div>
     <div>
       <h3 className="text-lg font-semibold text-white">{header}</h3>
@@ -126,14 +139,17 @@ export default function LogoPhilosophy() {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ 
+          once: true, 
+          amount: 0.2
+        }}
         variants={{
           hidden: { opacity: 0 },
           visible: {
             opacity: 1,
             transition: {
-              delayChildren: 0.2,
-              staggerChildren: 0.1,
+              delayChildren: 0.1,
+              staggerChildren: 0.05,
             },
           },
         }}
