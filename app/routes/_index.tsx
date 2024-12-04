@@ -3,6 +3,7 @@ import type { MetaFunction } from "@remix-run/node"
 import HeroCountdown from "~/components/HeroCountdown"
 import LogoPhilosophy from "~/components/LogoPhilosophy"
 import Map from "~/components/Map"
+import { motion } from "framer-motion"
 
 export const meta: MetaFunction = () => {
   return [
@@ -46,7 +47,19 @@ export default function Index() {
       </section>
 
       {/* Map Section */}
-      <section className="bg-background">
+      <section className="bg-background text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6 },
+          }}
+          viewport={{ once: true }}
+          className="text-xl md:text-5xl font-bold text-white mb-4"
+        >
+          Lokasi KKN
+        </motion.h2>
         <Map />
       </section>
     </div>

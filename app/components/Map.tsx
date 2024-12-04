@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
@@ -5,6 +6,7 @@ import { motion } from "framer-motion"
 export default function Map() {
   const [MapComponent, setMapComponent] = useState<React.ComponentType | null>(null)
   const [isClient, setIsClient] = useState(false)
+  const [activeMap, setActiveMap] = useState<'leaflet' | 'google'>('leaflet')
 
   // Koordinat batas wilayah Desa Petir (contoh koordinat, perlu diganti dengan koordinat sebenarnya)
   const desaPetirBoundary: [number, number][] = [
@@ -190,18 +192,6 @@ export default function Map() {
       ({ MapContainer, TileLayer, Marker, Tooltip, Polygon }) => {
         const DynamicMap = () => (
           <div className="container mx-auto px-4 py-16 flex flex-col items-center w-full h-[40rem]">
-            <motion.h2
-              initial={{ opacity: 0, y: -50 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.6 },
-              }}
-              viewport={{ once: true }}
-              className="text-xl md:text-5xl font-bold text-white mb-8"
-            >
-              Lokasi KKN
-            </motion.h2>
             <MapContainer
               className="w-full h-full"
               center={[-7.4895, 109.5904]}
@@ -272,5 +262,53 @@ export default function Map() {
 
   // Only render on client
   if (!isClient) return null
-  return MapComponent ? <MapComponent /> : null
+
+  return (
+    <div>
+      {/* Map Toggle Buttons */}
+      <div className="flex justify-center space-x-4">
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className={`px-4 py-2 rounded-full transition-colors ${
+            activeMap === 'leaflet' 
+              ? 'bg-blue-600 text-white cursor-not-allowed' 
+              : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+          }`}
+          onClick={() => setActiveMap('leaflet')}
+          disabled={activeMap === 'leaflet'}
+        >
+          Leaflet Maps
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className={`px-4 py-2 rounded-full transition-colors ${
+            activeMap === 'google' 
+              ? 'bg-blue-600 text-white cursor-not-allowed' 
+              : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+          }`}
+          onClick={() => setActiveMap('google')}
+          disabled={activeMap === 'google'}
+        >
+          Google Maps
+        </motion.button>
+      </div>
+
+      {/* Conditional Rendering of Maps */}
+      {activeMap === 'leaflet' && MapComponent ? <MapComponent /> : (
+        <div className="container mx-auto px-4 py-16 flex flex-col items-center w-full h-[40rem]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31645.993729454323!2d109.57218336569323!3d-7.492917471883096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7aad428cc8e74d%3A0x5027a76e3552500!2sPetir%2C%20Purwanegara%2C%20Banjarnegara%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1733286172186!5m2!1sen!2sid&layer=s"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      )}
+    </div>
+  )
 }
