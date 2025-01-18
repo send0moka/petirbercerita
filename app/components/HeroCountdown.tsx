@@ -10,7 +10,7 @@ export default function HeroCountdown() {
     minutes: 0,
     seconds: 0,
   })
-  const targetDate = new Date("2025-01-08T00:00:00+07:00")
+  const targetDate = new Date("2025-02-11T00:00:00+07:00")
 
   const padZero = (num: number) => {
     return num.toString().padStart(2, "0")
@@ -139,7 +139,7 @@ export default function HeroCountdown() {
         transition={{ duration: 0.8, delay: 0.6 }}
         className="text-sm text-muted-foreground mt-6"
       >
-        Tanggal dimulai 8 Januari 2025
+        Tanggal berakhir 11 Februari 2025
       </motion.p>
     </div>
   )

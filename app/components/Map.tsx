@@ -8,7 +8,7 @@ export default function Map() {
   const [isClient, setIsClient] = useState(false)
   const [activeMap, setActiveMap] = useState<'leaflet' | 'google'>('leaflet')
 
-  // Koordinat batas wilayah Desa Petir (contoh koordinat, perlu diganti dengan koordinat sebenarnya)
+  // Koordinat batas wilayah Desa Petir
   const desaPetirBoundary: [number, number][] = [
     [-7.474459, 109.583146], // kiri atas
     [-7.474461, 109.583182],
